@@ -1,6 +1,6 @@
 * {
   font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
   box-sizing: border-box;
 }
 
@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font: 400 20px/1.6 $text-font-family;
+  font: 300 20px/1.6 $text-font-family;
   background: $background-color;
   color: $text-color;
 

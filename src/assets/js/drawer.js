@@ -12,7 +12,8 @@ var Drawer = (function ($, Mzr) {
 
     var _body = $('body'),
         _container = $('#container'),
-        _overlay = $('.drawer-overlay');
+        _overlay = $('.drawer-overlay'),
+        _drawerButton = $('#drawer-button');
 
     var module = {
         open: function() {
@@ -23,6 +24,12 @@ var Drawer = (function ($, Mzr) {
         },
         isOpen: function() {
           return _body.hasClass('drawer-open');
+        },
+        show: function() {
+          _drawerButton.fadeIn();
+        },
+        hide: function() {
+          _drawerButton.fadeOut();
         },
         bindOverlay: function() {
           _overlay.on('click', function(e) {
@@ -56,6 +63,8 @@ var Drawer = (function ($, Mzr) {
       init: module.init,
       open: module.open,
       close: module.close,
+      hide: module.hide,
+      show: module.show,
       isOpen: module.isOpen
     };
 

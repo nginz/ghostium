@@ -14,7 +14,8 @@
         $body     = $(document.body),
         $head     = $('head'),
         $surface  = $body,
-        $content  = $('.content', $surface);
+        $content  = $('.content', $surface),
+        $drawerBtn= $('#drawer-button');
 
     // FastClick bindings
     // =================
@@ -100,6 +101,15 @@
       }
     };
 
+    var _drawerHandler = function() {
+      if(window.location.pathname === "/"){
+        Drawer.hide();
+      }else{
+        Drawer.show();
+      }
+    }
+    _drawerHandler();
+
     // PJax bindings
     // =================
     if ($.support.pjax && GHOSTIUM.enablePjax) {
@@ -112,6 +122,7 @@
         _gaHandler();
         _disqusCounterHandler();
         _prismHandler();
+        _drawerHandler();
 
         $('[data-load-image]', $content).each(function() {
           ImageLoader.load($(this));
